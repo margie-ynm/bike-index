@@ -12,12 +12,17 @@ Bike.prototype.getStolenCount = function(city) {
 };
 
 Bike.prototype.getStolenNames = function(city) {
-  $.get('https://bikeindex.org:443/api/v3/search?page=1&per_page=100&location=' + city  + '&distance=10&stolenness=stolen').then(function(response) {
+  $.get('https://bikeindex.org:443/api/v3/search?page=1&per_page=9999&location=' + city  + '&distance=10&stolenness=stolen').then(function(response) {
     console.log(response);
     $('.showBikes').append("The types of bicycles stolen in " + city + " are the following: ");
-    response.bikes.forEach(function(bike) {
-      $('.showBikes').append("<li>" + bike.title + "</li>");
-    });
+
+    for (var i = 0; i < response.bikes.length; i++) {
+      $('.showBikes').append("<li>" + response.bikes[i].title + "</li>");
+    }
+
+    // response.bikes.forEach(function(bike) {
+    //   $('.showBikes').append("<li>" + bike.title + "</li>");
+    // });
   }).fail(function(error) {
     $('.showBikes').text(error.responseJSON.message);
   });
