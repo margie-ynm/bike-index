@@ -1,21 +1,15 @@
-function Calculator(skinName) {
-  this.skin = skinName;
+var apiKey = require('./../.env').apiKey;
+
+function Bike () {
+
 }
 
-Calculator.prototype.pingPong = function(goal) {
-  var output = [];
-  for (var i = 1; i <= goal; i++) {
-    if (i % 15 === 0) {
-      output.push("ping-pong");
-    } else if (i % 3 === 0) {
-      output.push("ping");
-    } else if (i % 5 === 0) {
-      output.push("pong");
-    } else  {
-      output.push(i);
-    }
-  }
-  return output;
+Bike.prototype.getStolenCount = function(city) {
+  $.get('https://bikeindex.org:443/api/v3/search/count?location=' + city + '&distance=10&stolenness=stolen').then(function(response) {
+    $('.showBikes').text("The number of bicycles stolen in " + city + " is " + response.proximity);
+  }).fail(function(error) {
+    $('.showBikes').text(error.responseJSON.message);
+  });
 };
 
-exports.calculatorModule = Calculator;
+exports.bikeModule = Bike;

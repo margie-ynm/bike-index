@@ -1,13 +1,10 @@
-var Calculator = require('./../js/bike.js').calculatorModule;
+var Bike = require('./../js/bike.js').bikeModule;
 
 $(document).ready(function() {
-  $('#ping-pong-form').submit(function(event) {
-    event.preventDefault();
-    var goal = $('#goal').val();
-    var simpleCalculator = new Calculator("hot pink");
-    var output = simpleCalculator.pingPong(goal);
-    output.forEach(function(element) {
-      $('#solution').append("<li>" + element + "</li>");
-    });
+  var currentBikeObject = new Bike();
+  $('#bikeLocation').click(function() {
+    var city = $('#location').val();
+    $('#location').val("");
+    currentBikeObject.getStolenCount(city);
   });
 });
