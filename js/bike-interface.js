@@ -6,5 +6,6 @@ $(document).ready(function() {
     var city = $('#location').val();
     $('#location').val("");
     currentBikeObject.getStolenCount(city);
+    currentBikeObject.getStolenNames(city);
   });
 });
