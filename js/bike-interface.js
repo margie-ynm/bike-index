@@ -4,8 +4,10 @@ $(document).ready(function() {
   var currentBikeObject = new Bike();
   $('#bikeLocation').click(function() {
     var city = $('#location').val();
+    var radius = $('#radius').val();
     $('#location').val("");
-    currentBikeObject.getStolenCount(city);
+    $('#radius').val("");
+    currentBikeObject.getStolenCount(city, radius);
     currentBikeObject.getStolenNames(city);
   });
 });
