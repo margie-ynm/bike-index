@@ -1,0 +1,46 @@
+body {
+
+}
+ul {
+ list-style-type: none;
+}
+h1 {
+  text-align: center;
+}
+.middle-ground {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bikegroup {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: stretch;
+}
+.testing {
+  overflow: hidden;
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  height: 5vh;
+  width: 40vw;
+}
+
+.form-group:first-of-type {
+  background-color: peachpuff;
+  margin-top: 50px;
+
+}
+.form-group:nth-of-type(2n) {
+  background-color: red;
+}
+.form-group:nth-of-type(3n) {
+  background-color: plum;
+}

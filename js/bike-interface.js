@@ -2,12 +2,9 @@ var Bike = require('./../js/bike.js').bikeModule;
 
 
 $(document).ready(function() {
-  function toTitleCase(str)
-  {
-    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-  }
-  var currentBikeObject = new Bike();
-  $('#bikeLocation').click(function() {
+  $('#bike-info').submit(function(event) {
+    event.preventDefault();
+    var currentBikeObject = new Bike();
     var city = $('#location').val();
     var radius = $('#radius').val();
     var manufacturer = $('#manufacturer').val();

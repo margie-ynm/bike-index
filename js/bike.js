@@ -35,9 +35,9 @@ Bike.prototype.getAttributes = function(city, radius, manufacturer) {
       if (mn === manufacturer) {
         count++;
         if (bike.thumb === null) {
-          $('.middle-ground').append("<li>" + bike.title + "</li>" + "<li>" + "<img src='../../img/placeholdershitzu.jpg' >" + "</li>" );
+          $('.middle-ground').append("<li>" + "<div class='bikegroup'>" + bike.title + "<img src='../../img/placeholder.jpg' class='testing' >" + "</div> </li>" );
         } else {
-          $('.middle-ground').append("<li>" + bike.title + "</li>" + "<li> <img src='" + bike.thumb + "'></li>" );
+          $('.middle-ground').append("<li>" + "<div class='bikegroup'>" + bike.title + "<img src='" + bike.thumb + "'> </div> </li>" );
         }
       }
     });
