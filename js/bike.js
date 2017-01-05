@@ -32,12 +32,17 @@ Bike.prototype.getAttributes = function(city, radius, manufacturer) {
     response.bikes.forEach(function(bike) {
       var mn = bike.manufacturer_name;
       mn = mn.toLowerCase();
-    if (mn === manufacturer) {
-      count++;
-      $('.middle-ground').append("<li>" + bike.title + "</li>");
-    }
-  });
-  $('.above-stuff').append("<p>" + "There are " + count + " bicycles that match your manufacturer:" + "</p>");
+      if (mn === manufacturer) {
+        count++;
+        if (bike.thumb === null) {
+          $('.middle-ground').append("<li>" + bike.title + "</li>" + "<li>" + "<img src='../../img/placeholdershitzu.jpg' >" + "</li>" );
+        } else {
+          $('.middle-ground').append("<li>" + bike.title + "</li>" + "<li> <img src='" + bike.thumb + "'></li>" );
+        }
+      }
+    });
+    $('.above-stuff').append("<h3>" + "There are " + count + " bicycles that match your manufacturer:" + "</h3>");
+    console.log(count);
   }).fail(function(error) {
     $('.showBikes').text(error.responseJSON.message);
   });
