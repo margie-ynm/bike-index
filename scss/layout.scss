@@ -37,14 +37,17 @@ align-items: center;
   height: 5vh;
   width: 40vw;
 }
-
+#bike-info {
+  text-align: center;
+  align-items: center;
+}
 .form-group:first-of-type {
   background-color: peachpuff;
   margin-top: 50px;
 
 }
 .form-group:nth-of-type(2n) {
-  background-color: red;
+  background-color: #f4b942;
 }
 .form-group:nth-of-type(3n) {
   background-color: plum;
