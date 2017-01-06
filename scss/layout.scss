@@ -18,6 +18,11 @@ h1 {
   align-items: stretch;
   align-content: stretch;
 }
+.whatever {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 .testing {
   overflow: hidden;
   object-fit: cover;

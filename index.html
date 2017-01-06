@@ -9,21 +9,23 @@
   </head>
   <body>
     <div class="container">
-      <h1>Get bike information here!</h1>
+      <h1>Stolen Bike Registry</h1>
       <form id="bike-info">
-        <div class="form-group">
-          <label for="location">Enter a location:</label>
-          <input id="location" type="text">
+        <div class="whatever">
+          <div class="form-group">
+            <label for="location">Enter a location:</label>
+            <input id="location" type="text">
+          </div>
+          <div class="form-group">
+            <label for="location">Enter a radius (in miles) around the location:</label>
+            <input id="radius" type="text">
+          </div>
+          <div class="form-group">
+            <label for="manufacturer">Enter a manufacturer to filter by:</label>
+            <input type="text" id="manufacturer" name="name" value="">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="location">Enter a radius (in miles) around the location:</label>
-          <input id="radius" type="text">
-        </div>
-        <div class="form-group">
-          <label for="manufacturer">Enter a manufacturer to filter by:</label>
-          <input type="text" id="manufacturer" name="name" value="">
-        </div>
-        <button type="submit" class="btn-success" id="bikeLocation">Get bikes!</button>
+        <button type="submit" class="btn btn-success" id="bikeLocation">Get bikes!</button>
       </form>
       <ul class="list-unstyled above-stuff"></ul>
       <ul class="list-unstyled middle-ground"></ul>
